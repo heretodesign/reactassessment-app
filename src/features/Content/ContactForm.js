@@ -26,23 +26,61 @@ class ContactForm extends React.Component {
   render() {
     return (
       <>
-        <section className="section is-paddingless-horizontal">
+        <section className="section is-paddingless-horizontal imgContact">
             <div className="container grid is-large">
+              <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
                 <div className="firstsection">
-                    <h1 className="title is-3" id="mainBlack">SEE YOU AT THE WEDDING!</h1>
+                    <p className="subtitle is-4 has-text-center has-text-grey has-text-weight-semibold">Get started today</p>
+                    <p className="subtitle is-5 has-text-center has-text-grey has-text-weight-semibold">Enhance Your Hospitality</p>
                     <div className="content">
-                        <p className="subtitle is-5" id="fontcolor">We can’t wait to see all of our beloved
-                         friends and relatives at the wedding. If, by chance, you cannot be there,
-                          please let us know in advance.</p>
-                          <a class="button is-large is-rounded is-fullwidth is-primary has-text-weight-bold">
-                          <span class="icon is-small">
-                            <i class="far fa-envelope"></i>
-                          </span>
-                          <span className="has-text-weight-bold">RSVP NOW</span>
-                          </a>
-                          <h1 className="title is-3" id="textPinkDark">GOOGLE MAPS <br /> AT THE Bottom</h1>
+                      <div class="columns">
+                        <div class="column is-half">
+                          <div class="field">
+                            <div class="control">
+                              <input class="input is-large is-primary is-outlined" type="text" placeholder="Your Name" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="column">
+                        <div class="field">
+                          <div class="control">
+                            <input class="input is-large is-primary is-outlined" type="text" placeholder="Your Number" />
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="columns">
+                        <div class="column">
+                          <div class="field">
+                            <div class="control">
+                              <input class="input is-large is-primary is-outlined" type="text" placeholder="Your Email" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="columns">
+                        <div class="column">
+                          <div class="field">
+                            <div class="control">
+                              <input class="input is-primary is-outlined is-large" type="text" placeholder="Your Restaurant" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="columns">
+                        <div class="column">
+                          <div class="field">
+                            <div class="control">
+                              <a class="button is-large is-primary is-fullwidth">GET DEMO</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                  </div>
+                </div>
+              </div>
             </div>
         </section>
       </>
