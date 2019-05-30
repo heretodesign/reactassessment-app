@@ -1,9 +1,38 @@
 import React, { Component } from 'react';
 import { Button, Columns, Navbar, Header} from "react-bulma-components/full"
 import 'react-bulma-components/dist/react-bulma-components.min.css'
+import axios from 'axios'
+import { Route, Link } from "react-router-dom"
 
 
-function TaskToDo() {
+axios.defaults.baseURL = 'http://127.0.0.1:8001/api'
+
+function TaskToDo()  {
+  
+
+
+  const markCompleted = event => {
+    axios.get('/todos')
+    .then(response => {
+      console.log(response)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
+
+
+  const handleSubmit = event => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  const handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
 
   return (
     <>
@@ -49,34 +78,36 @@ function TaskToDo() {
                   </div>
                   <div className="content" id="landingForm">
                     <div class="columns">
-                      <div class="column is-two-fifths">
-                        <div class="field">
-                          <div class="control">
-                            <input class="input is-large" type="text" placeholder="Add tasks" />
+                    <form id="joinus-form" onSubmit={this.handleSubmit}>
+                        <div class="column is-two-fifths">
+                          <div class="field">
+                            <div class="control">
+                              <input class="input is-large" type="text" placeholder="Add tasks" value={this.state.text} onChange={this.handleChange} />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="column is-one-fifth">
-                        <div class="field">
-                          <div class="control">
-                            <input class="input is-large" type="text" placeholder="Due Date" />
+                        <div class="column is-one-fifth">
+                          <div class="field">
+                            <div class="control">
+                              <input class="input is-large" type="text" placeholder="Due Date" value={this.state.due} onChange={this.handleChange} />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="column is-one-fifth">
-                        <div class="field">
-                          <div class="control">
-                            <input class="input is-large" type="text" placeholder="Date Completed" />
+                        <div class="column is-one-fifth">
+                          <div class="field">
+                            <div class="control">
+                              <input class="input is-large" type="text" placeholder="Date Completed" value={this.state.completed} onChange={this.handleChange} />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="column is-one-fifth">
-                        <div class="field">
-                          <div class="control">
-                            <a class="button is-large is-primary is-fullwidth">Add task</a>
+                        <div class="column is-one-fifth">
+                          <div class="field">
+                            <div class="control">
+                              <button class="button is-large is-primary is-fullwidth" type="submit" value="Submit">Add task</button>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </form>
                     </div>
                   </div>
                   <div className="content">

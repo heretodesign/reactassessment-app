@@ -1,0 +1,75 @@
+retrieveTodos = () => {
+  axios.get('/todos/show')
+    .then(response => {
+      this.setState({
+      todos: response.data,
+    });
+    console.log(this.state.todos)
+  })
+  .catch(error => {
+    console.log(error);
+  })
+}
+
+state = {
+  todos: []
+}
+
+componentDidMount() {
+  axios.get('http://127.0.0.1:8001/api/todos')
+  .then(result => {
+    this.setState({
+      todos: result.data,
+    })
+  })
+  .catch(error => {
+    console.log('ERROR: ', error)
+  })
+}
+
+
+state = {
+  text: "",
+  due: "",
+  completed: "",
+}
+
+<Body />
+<Footer />
+
+STEPS TO CODE THE APPLICATION
+# React CRUD [ create, read, update & delete]
+# Each of the pages handles CRUD
+# One page to handle DELETES, another EDITS/UPDATES and another to handle CREATE
+# 4 Link pages using React Router
+[TodoList/Home, TodoCreate, TodoEdit,     TodoDelete,   TodoShow] = Component
+['/']         [/todos/new] [/todos/edit] [/todos/delete] [/todos/show] = Path
+
+# Fetch or Axios to handle the API endpoint call
+# data.response.results = view the results
+
+
+backend Laravel
+[+] = done
+# create API - Model, controller and Migrations to handle the passing data to the DB [+]
+# create API endpoints in the web/api.php [+]
+# test workability using postman [+]
+# API able to perform CRUD using postman [+]
+# handle CORS using Laravel CORS by Barry
+
+Testing
+# test the React App
+
+
+Production
+# build the react app
+
+2400
+ 300
+ ----------
+2700
+
+5000
+2700
+-----
+2300
