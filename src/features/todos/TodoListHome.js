@@ -48,8 +48,8 @@ class TodoListHome extends React.Component {
                                     <td>{ task.text } </td>
                                     <td>{ task.due }</td>
                                     <td>{ task.done }</td>
-                                    <td>{ task.completed }</td>
                                     <td><button className="button is-primary">Mark as Complete</button></td>
+                                    <td><button className="button is-danger">Delete</button></td>
                                   </tr>
                                 ))}
                               </tbody>

@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Route, Link } from "react-router-dom"
 import Header from './features/Header/Header.js'
 import Footer from './features/Footer/Footer.js'
-import Body from './features/Content/Main.js'
+import Landing from './features/Content/Landing.js'
 
 import TodoCreate from './features/todos/TodoCreate.js'
 import TodoDelete from './features/todos/TodoDelete.js'
@@ -19,12 +19,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header />
+        <Landing />
         <TodoNav />
         <Route exact path="/" component={TodoListHome} />
         <Route path="/todos/new" component={TodoCreate} />
         <Route path="/todos/delete" component={TodoDelete} />
         <Route path="/todos/show" component={TodoShow} />
         <Route path="/todos/edit" component={TodoEdit} />
+        <Footer />
       </div>
     );
   }
