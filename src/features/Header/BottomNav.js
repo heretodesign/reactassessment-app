@@ -8,29 +8,29 @@ import 'react-bulma-components/dist/react-bulma-components.min.css'
 function BottomNav() {
 
   return (
-      <div class="container topNav">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="https://www.letsumai.com/for-restaurants">
+      <div className="container topNav">
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand">
+                <a className="navbar-item" href="https://www.letsumai.com/for-restaurants">
                   <img src={umai} className="nav-logo" width="200" height="150" alt="umai" />
                 </a>
 
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                   <span aria-hidden="true"></span>
                   <span aria-hidden="true"></span>
                   <span aria-hidden="true"></span>
                 </a>
             </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-end has-text-weight-bold">
+            <div id="navbarBasicExample" className="navbar-menu">
+            <div className="navbar-end has-text-weight-bold">
 
             </div>
 
-            <div class="navbar-end">
-              <div class="navbar-item has-text-weight-bold">
-                <div class="buttons">
-                  <a class="button is-primary">
+            <div className="navbar-end">
+              <div className="navbar-item has-text-weight-bold">
+                <div className="buttons">
+                  <a className="button is-primary">
                     <strong>GET STARTED</strong>
                   </a>
                 </div>

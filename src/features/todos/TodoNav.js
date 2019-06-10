@@ -33,7 +33,7 @@ const TodoNav = () => {
                     <div className="column is-one-quarter">
                       <div className="field">
                         <div className="control">
-                          <Link to="/todos/deleted" className="button is-large is-primary is-fullwidth">Trash</Link>
+                          <Link to="/todos/delete" className="button is-large is-primary is-fullwidth">Trash</Link>
                         </div>
                       </div>
                     </div>

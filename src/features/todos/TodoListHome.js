@@ -9,13 +9,37 @@ class TodoListHome extends React.Component {
   }
 
   componentDidMount () {
-    axios.get('http://127.0.0.1:8001/api/todos').then(response => {
+    axios.get('http://127.0.0.1:8001/api/todos/pending').then(response => {
       this.setState({
         tasks: response.data
       })
     })
     .catch(error => {
       console.log('ERROR: ', error)
+    })
+  }
+
+  markComplete = (taskId) => {
+    axios.put(`http://127.0.0.1:8001/api/todos/${taskId}/complete`)
+    .then(response => {
+      this.setState({
+        tasks: this.state.tasks.filter(task => task.id != taskId)
+      })
+    })
+    .catch(error => {
+      alert('Cannnot Mark it as Complete')
+    })
+  }
+
+  markAsTrash = (taskId) => {
+    axios.put(`http://127.0.0.1:8001/api/todos/${taskId}`)
+    .then(response => {
+      this.setState({
+        tasks: this.state.tasks.filter(task => task.id != taskId)
+      })
+    })
+    .catch(error => {
+      alert('Cannnot Mark as Trash')
     })
   }
 
@@ -48,8 +72,8 @@ class TodoListHome extends React.Component {
                                     <td>{ task.text } </td>
                                     <td>{ task.due }</td>
                                     <td>{ task.done }</td>
-                                    <td><button className="button is-primary">Mark as Complete</button></td>
-                                    <td><button className="button is-danger">Delete</button></td>
+                                    <td><button onClick={() => {this.markComplete(task.id)} } className="button is-primary">Mark as Complete</button></td>
+                                    <td><button onClick={() => {this.markAsTrash(task.id)} } className="button is-danger">Delete</button></td>
                                   </tr>
                                 ))}
                               </tbody>

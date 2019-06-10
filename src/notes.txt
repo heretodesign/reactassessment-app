@@ -1,3 +1,17 @@
+
+
+
+
+Mark as complete: is a hard coded buttoon that updates the 
+
+deleted btn flags the boolean from false to true
+
+
+
+
+
+
+
 retrieveTodos = () => {
   axios.get('/todos/show')
     .then(response => {

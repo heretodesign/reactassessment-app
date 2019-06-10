@@ -8,7 +8,8 @@ class TodoCreate extends React.Component {
     text: '',
     due: '',
     done: '',
-    completed: ''
+    completed: '',
+    is_trash: ''
   }
 
   handleChange = event => {
@@ -28,6 +29,7 @@ class TodoCreate extends React.Component {
     bodyFormData.set('due', this.state.due)
     bodyFormData.set('done', this.state.done)
     bodyFormData.set('completed', '1')
+    bodyFormData.set('is_trash', '1')
 
     axios({
       method: 'post',

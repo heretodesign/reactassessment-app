@@ -3,8 +3,48 @@ import axios from 'axios'
 import { Button, table, thead, tbody, columns, column} from "react-bulma-components/full"
 import 'react-bulma-components/dist/react-bulma-components.min.css'
 
-const TodoShow = props => {
+class TodoShow extends React.Component {
+  state = {
+    tasks: [],
+  }
 
+  componentDidMount () {
+    axios.get('http://127.0.0.1:8001/api/todos/completed').then(response => {
+      console.log(response)
+      this.setState({
+        tasks: response.data
+      })
+    })
+    .catch(error => {
+      console.log('ERROR: ', error)
+    })
+  }
+
+  markIncomplete = (taskId) => {
+    axios.put(`http://127.0.0.1:8001/api/todos/${taskId}/incomplete`)
+    .then(response => {
+      this.setState({
+        tasks: this.state.tasks.filter(task => task.id != taskId)
+      })
+    })
+    .catch(error => {
+      alert('Cannnot mark it as incomplete')
+    })
+  }
+
+  markAsTrash = (taskId) => {
+    axios.put(`http://127.0.0.1:8001/api/todos/${taskId}`)
+    .then(response => {
+      this.setState({
+        tasks: this.state.tasks.filter(task => task.id != taskId)
+      })
+    })
+    .catch(error => {
+      alert('Cannnot Mark as Trash')
+    })
+  }
+
+  render() {
   return (
     <>
         <section className="section is-paddingless-horizontal">
@@ -26,14 +66,14 @@ const TodoShow = props => {
                               </tr>
                             </thead>
                             <tbody>
-                              { this.props.tasks.map((task) => (
+                              { this.state.tasks.map((task) => (
                                 <tr className="key={task.id}">
                                   <td>{ task.id }</td>
                                   <td>{ task.text } </td>
                                   <td>{ task.due }</td>
                                   <td>{ task.done }</td>
-                                  <td><button className="button is-primary">Mark as Complete</button></td>
-                                  <td><button className="button is-danger">Delete</button></td>
+                                  <td><button onClick={() => {this.markIncomplete(task.id)}} className="button is-primary">Mark as Incomplete</button></td>
+                                  <td><button onClick={() => {this.markAsTrash(task.id)} } className="button is-danger">Delete</button></td>
                                 </tr>
                               ))}
                             </tbody>
@@ -44,15 +84,9 @@ const TodoShow = props => {
                  </div>
             </div>
         </section>
-        <section className="is-paddingless-horizontal has-background-primary">
-            <div className="container">
-                <div className="content">
-                    <p className="subtitle is-6 has-text-white isdata">Show Todo // Update Marked as Complete</p>
-                 </div>
-            </div>
-        </section>
     </>
-  );
+  )
+ }
 }
 
 export default TodoShow;
