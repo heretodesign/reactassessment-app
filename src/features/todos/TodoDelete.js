@@ -22,26 +22,26 @@ class TodoDelete extends React.Component {
   }
 
   markComplete = (taskId) => {
-    axios.put(`http://127.0.0.1:8001/api/todos/${taskId}`)
+    axios.put(`http://127.0.0.1:8001/api/todos/${taskId}/complete`)
     .then(response => {
       this.setState({
         tasks: this.state.tasks.filter(task => task.id != taskId)
       })
     })
     .catch(error => {
-      alert('Cannnot Mark it as Complete')
+      alert('Cannot Mark it as Complete!')
     })
   }
 
   restoreTrash = (taskId) => {
-    axios.put(`http://127.0.0.1:8001/api/todos/${taskId}`)
+    axios.put(`http://127.0.0.1:8001/api/todos/${taskId}/restore`)
     .then(response => {
       this.setState({
         tasks: this.state.tasks.filter(task => task.id != taskId)
       })
     })
     .catch(error => {
-      alert('Cannnot Mark as Trash')
+      alert('Cannnot Restore Task')
     })
   }
 

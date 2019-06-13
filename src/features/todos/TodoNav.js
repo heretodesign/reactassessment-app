@@ -51,6 +51,6 @@ const TodoNav = () => {
      </section>
     </>
   );
-
 }
+
 export default TodoNav;

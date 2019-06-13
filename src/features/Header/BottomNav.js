@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
-import umai from '../../img../../img/umai.svg';
-
+import React, { Component } from 'react'
 import { Button, Columns, Navbar, Header} from "react-bulma-components/full"
 import 'react-bulma-components/dist/react-bulma-components.min.css'
-
+import umai from '../../img../../img/umai.svg'
 
 function BottomNav() {
 

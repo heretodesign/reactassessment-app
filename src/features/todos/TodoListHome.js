@@ -32,7 +32,7 @@ class TodoListHome extends React.Component {
   }
 
   markAsTrash = (taskId) => {
-    axios.put(`http://127.0.0.1:8001/api/todos/${taskId}`)
+    axios.put(`http://127.0.0.1:8001/api/todos/${taskId}/trash`)
     .then(response => {
       this.setState({
         tasks: this.state.tasks.filter(task => task.id != taskId)

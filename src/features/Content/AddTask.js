@@ -10,7 +10,7 @@ function AddTask() {
       <section className="section is-paddingless-horizontal">
           <div className="container grid is-large">
               <div className="firstsection">
-                  <h2 className="title is-3 has-text-left has-text-weight-light" id="mainBlack">React ##ToDo Assessment<br />
+                  <h2 className="title is-3 has-text-left has-text-weight-light" id="mainBlack">React ToDo Assessment<br />
                   </h2>
                   <div className="content">
                       <p className="subtitle is-6 has-text-left has-text-grey has-text-weight-semibold is-uppercase">dashboard: manage All Your life changing Tasks. With poise and ease - execute all of them one by one</p>

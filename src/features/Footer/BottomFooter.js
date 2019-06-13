@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Columns } from "react-bulma-components/full"
+import { columns, column } from "react-bulma-components/full"
 import 'react-bulma-components/dist/react-bulma-components.min.css'
 import umaifcbk from '../../img../../img/fcbk.svg'
 import umaiinsta from '../../img../../img/insta.svg'
@@ -64,10 +64,10 @@ function BottomFooter() {
                       <div className="navbar-end">
                         <div className="navbar-item">
                           <div className="buttons">
-                            <a className=" is-primary">
+                            <a className="is-primary">
                               <img src={umaifcbk} className="nav-logo has-text-right" width="60" height="60" alt="umai" />
                             </a>
-                            <a className=" is-primary">
+                            <a className="is-primary">
                               <img src={umailinked} className="nav-logo" width="60" height="60" alt="umai"  />
                             </a>
                             <a className="is-light">
